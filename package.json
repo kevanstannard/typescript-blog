@@ -1,0 +1,30 @@
+{
+  "name": "typescript-blog",
+  "private": true,
+  "scripts": {
+    "res:build": "rescript build",
+    "res:watch": "rescript build -w",
+    "blog:build": "node scripts/build -- ./docs",
+    "blog:serve": "node scripts/serve -- ./docs",
+    "blog:watch": "chokidar './content' './src' './static' -c 'npm run blog:build -s'",
+    "postinstall": "npm run res:build",
+    "build": "npx rescript clean && npm run res:build && npm run blog:build",
+    "start": "npm run blog:serve & npm run blog:watch"
+  },
+  "dependencies": {
+    "@rescript/react": "0.10.3",
+    "browser-sync": "2.27.9",
+    "chokidar-cli": "3.0.0",
+    "copyfiles": "2.4.1",
+    "front-matter": "4.0.2",
+    "glob": "7.2.0",
+    "highlight.js": "11.5.0",
+    "linkify-it": "3.0.3",
+    "markdown-it": "12.3.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "rescript": "9.1.4",
+    "rimraf": "3.0.2",
+    "yargs": "17.3.1"
+  }
+}
