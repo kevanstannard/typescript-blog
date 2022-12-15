@@ -1,8 +1,6 @@
 <!doctype html><html data-reactroot=""><head><title>Branded types (mimick Nominal types)</title><meta charSet="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/default.min.css" rel="stylesheet"/><link href="static/styles.css" rel="stylesheet"/></head><body><div class="container"><p><a href="index.html">← Back to index</a></p><h1>Branded types (mimick Nominal types)</h1><p>Thu Dec 15 2022</p><div><pre><code>typescript@4.9.4
 </code></pre>
-<pre><code class="language-ts">export {};
-
-type Brand&lt;TBase, TBrand&gt; = TBase &amp; { __brand: TBrand };
+<pre><code class="language-ts">type Brand&lt;TBase, TBrand&gt; = TBase &amp; { __brand: TBrand };
 
 type EmailAddress = Brand&lt;string, &quot;EmailAddress&quot;&gt;;
 

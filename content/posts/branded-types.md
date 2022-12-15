@@ -8,8 +8,6 @@ typescript@4.9.4
 ```
 
 ```ts
-export {};
-
 type Brand<TBase, TBrand> = TBase & { __brand: TBrand };
 
 type EmailAddress = Brand<string, "EmailAddress">;

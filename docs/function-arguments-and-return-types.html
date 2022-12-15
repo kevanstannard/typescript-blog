@@ -1,0 +1,18 @@
+<!doctype html><html data-reactroot=""><head><title>Function arguments and return types</title><meta charSet="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/default.min.css" rel="stylesheet"/><link href="static/styles.css" rel="stylesheet"/></head><body><div class="container"><p><a href="index.html">← Back to index</a></p><h1>Function arguments and return types</h1><p>Fri Dec 16 2022</p><div><pre><code>typescript@4.9.4
+</code></pre>
+<pre><code class="language-ts">type FunctionArgsType&lt;T&gt; = T extends (...args: infer Args) =&gt; never
+  ? Args
+  : never;
+
+type FunctionReturnType&lt;T&gt; = T extends (...args: never[]) =&gt; infer Return
+  ? Return
+  : never;
+
+function hello(name: string, age: number): string {
+  return &quot;&quot;;
+}
+
+type HelloArgs = FunctionArgsType&lt;typeof hello&gt;;
+type HelloRrturn = FunctionReturnType&lt;typeof hello&gt;;
+</code></pre>
+</div></div></body></html>
