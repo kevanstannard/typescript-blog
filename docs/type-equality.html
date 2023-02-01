@@ -1,0 +1,12 @@
+<!doctype html><html data-reactroot=""><head><title>Type equality</title><meta charSet="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/default.min.css" rel="stylesheet"/><link href="static/styles.css" rel="stylesheet"/></head><body><div class="container"><p><a href="index.html">← Back to index</a></p><h1>Type equality</h1><p>Thu Feb 02 2023</p><div><pre><code>typescript@4.9.4
+</code></pre>
+<pre><code class="language-ts">// prettier-ignore
+export type Equals&lt;X, Y&gt; =
+    (&lt;T&gt;() =&gt; T extends X ? 1 : 2) extends
+    (&lt;T&gt;() =&gt; T extends Y ? 1 : 2) ? true : false;
+</code></pre>
+<h2>References</h2>
+<ul>
+<li><a href="https://github.com/Microsoft/TypeScript/issues/27024#issuecomment-421529650">[Feature request]type level equal operator</a></li>
+</ul>
+</div></div></body></html>
