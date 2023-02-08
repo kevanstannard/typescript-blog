@@ -1,0 +1,28 @@
+<!doctype html><html data-reactroot=""><head><title>Freshness</title><meta charSet="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/default.min.css" rel="stylesheet"/><link href="static/styles.css" rel="stylesheet"/></head><body><div class="container"><p><a href="index.html">← Back to index</a></p><h1>Freshness</h1><p>Thu Feb 09 2023</p><div><p>TypeScript provides a concept of Freshness (also called strict object literal checking) to make it easier to type check object literals that would otherwise be structurally type compatible.</p>
+<pre><code class="language-ts">function logIfHasName(something: { name?: string }) {
+  if (something.name) {
+    console.log(something.name);
+  }
+}
+var person = { name: &quot;matt&quot;, job: &quot;being awesome&quot; };
+var animal = { name: &quot;cow&quot;, diet: &quot;vegan, but has milk of own species&quot; };
+var typo = { neme: &quot;I just misspelled name to neme&quot; };
+
+logIfHasName(person); // okay
+logIfHasName(animal); // okay
+
+// @ts-expect-error
+logIfHasName(typo);
+// Argument of type '{ neme: string; }' is not assignable to parameter of type '{ name?: string | undefined; }'.
+// Object literal may only specify known properties, and 'neme' does not exist in type '{ name?: string | undefined; }'.
+
+// @ts-expect-error
+logIfHasName({ neme: &quot;I just misspelled name to neme&quot; });
+// Argument of type '{ neme: string; }' is not assignable to parameter of type '{ name?: string | undefined; }'.
+// Object literal may only specify known properties, and 'neme' does not exist in type '{ name?: string | undefined; }'.
+</code></pre>
+<h2>References</h2>
+<ul>
+<li><a href="https://basarat.gitbook.io/typescript/type-system/freshness">https://basarat.gitbook.io/typescript/type-system/freshness</a></li>
+</ul>
+</div></div></body></html>

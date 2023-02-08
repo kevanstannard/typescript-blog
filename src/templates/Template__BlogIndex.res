@@ -11,7 +11,7 @@ module BlogPost = {
 
 @react.component
 let make = (~blogPosts: array<Pages.blogPost>) => {
-  let title = "TypeScript Blog"
+  let title = "Bad TypeScript"
   <Template__Html title={title}>
     <p> <a href="about.html"> {React.string(`About this blog →`)} </a> </p>
     <h1> {React.string(title)} </h1>
