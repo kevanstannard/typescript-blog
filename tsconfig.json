@@ -11,18 +11,10 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "node"
-
-    // "module": "esnext",
-    // "target": "es2017",
-    // "lib": ["ESNext"],
-    // "strict": true,
-    // "esModuleInterop": true,
-    // "moduleResolution": "node",
-    // "skipLibCheck": true,
-    // "noUnusedLocals": false,
+    "moduleResolution": "node",
+    "moduleDetection": "force",
+    // "noUnusedLocals": true,
     // "noUnusedParameters": true,
-    // "noImplicitReturns": true,
-    // "allowJs": true
+    "noImplicitReturns": true
   }
 }
